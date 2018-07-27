@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("KSP.DataRelay")]
+[assembly: AssemblyTitle("DataRelay.Containers")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("KSP.DataRelay")]
+[assembly: AssemblyProduct("DataRelay.Containers")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("202d53f8-19e2-45ae-a375-32ef31c9eb46")]
+[assembly: Guid("bae09a46-4dcd-4976-8e17-5dc0e8dbf09c")]
 
 // Version information for an assembly consists of the following four values:
 //

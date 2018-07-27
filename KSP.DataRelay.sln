@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KSP.DataRelay", "KSP.DataRelay\KSP.DataRelay.csproj", "{202D53F8-19E2-45AE-A375-32EF31C9EB46}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataRelay", "DataRelay\DataRelay.csproj", "{C8D17880-CE28-49F2-97A5-70C7C354F3F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataRelay.Containers", "DataRelay.Containers\DataRelay.Containers.csproj", "{BAE09A46-4DCD-4976-8E17-5DC0E8DBF09C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{202D53F8-19E2-45AE-A375-32EF31C9EB46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{202D53F8-19E2-45AE-A375-32EF31C9EB46}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{202D53F8-19E2-45AE-A375-32EF31C9EB46}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{202D53F8-19E2-45AE-A375-32EF31C9EB46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8D17880-CE28-49F2-97A5-70C7C354F3F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8D17880-CE28-49F2-97A5-70C7C354F3F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8D17880-CE28-49F2-97A5-70C7C354F3F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8D17880-CE28-49F2-97A5-70C7C354F3F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAE09A46-4DCD-4976-8E17-5DC0E8DBF09C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAE09A46-4DCD-4976-8E17-5DC0E8DBF09C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAE09A46-4DCD-4976-8E17-5DC0E8DBF09C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAE09A46-4DCD-4976-8E17-5DC0E8DBF09C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
