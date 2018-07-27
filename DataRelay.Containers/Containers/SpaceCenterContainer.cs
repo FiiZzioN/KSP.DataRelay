@@ -10,7 +10,7 @@
 // License          : MIT License
 // ***********************************************************************
 
-namespace DataRelay.Containers
+namespace DataRelay.Common.Containers
 {
     public struct SpaceCenterContainer
     {

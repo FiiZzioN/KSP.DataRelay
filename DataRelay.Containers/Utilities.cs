@@ -1,19 +1,19 @@
-﻿// ************************************************************************
-// Assembly         : DataRelay
-// 
+﻿// ***********************************************************************
+// Assembly         : DataRelay.Containers
+//
 // Author           : Nicholas Tyler
 // Created          : 07-26-2018
-// 
+//
 // Last Modified By : Nicholas Tyler
 // Last Modified On : 07-26-2018
-// 
+//
 // License          : MIT License
 // ***********************************************************************
 
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace DataRelay
+namespace DataRelay.Common
 {
     public static class Utilities
     {

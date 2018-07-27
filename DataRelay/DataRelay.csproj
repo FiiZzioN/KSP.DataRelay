@@ -51,13 +51,13 @@
     <Compile Include="Data\Providers\GameDataProvider.cs" />
     <Compile Include="Data\Providers\SpaceCenterDataProvider.cs" />
     <Compile Include="Data\Relayers\GameDataRelay.cs" />
+    <Compile Include="PipeServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utilities.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataRelay.Containers\DataRelay.Containers.csproj">
+    <ProjectReference Include="..\DataRelay.Containers\DataRelay.Common.csproj">
       <Project>{bae09a46-4dcd-4976-8e17-5dc0e8dbf09c}</Project>
-      <Name>DataRelay.Containers</Name>
+      <Name>DataRelay.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

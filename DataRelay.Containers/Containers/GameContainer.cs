@@ -12,7 +12,7 @@
 
 using System.Runtime.InteropServices;
 
-namespace DataRelay.Containers
+namespace DataRelay.Common.Containers
 {
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
     public struct GameContainer
