@@ -21,11 +21,6 @@ namespace DataRelay
     public class PipeServer : IDisposable
     {
         /// <summary>
-        /// Gets or sets a value indicating whether the <see cref="PipeStream"/> object is connected.
-        /// </summary>
-        public bool IsConnected { get; protected set; }
-
-        /// <summary>
         /// Gets or sets a value indicating whether the <see cref="PipeStream"/> object is created.
         /// </summary>
         public bool IsCreated { get; protected set; }
@@ -33,19 +28,33 @@ namespace DataRelay
         /// <summary>
         /// Gets the pipe.
         /// </summary>
-        public NamedPipeServerStream Pipe { get; }
+        public NamedPipeServerStream Pipe { get; protected set; }
 
-        //public NamedPipeServerStream CreatePipeServer(string pipeName, PipeDirection direction)
-        //{
-        //    var pipe = new NamedPipeServerStream();
-        //}
+        public virtual NamedPipeServerStream CreatePipeServer(string pipeName)
+        {
+            return CreatePipeServer(pipeName, PipeDirection.InOut, 2, PipeTransmissionMode.Message);
+        }
+
+        public virtual NamedPipeServerStream CreatePipeServer
+            (string pipeName, PipeDirection direction, int maxNumberOfServerInstances, PipeTransmissionMode transmissionMode)
+        {
+            Pipe = new NamedPipeServerStream(pipeName, direction, maxNumberOfServerInstances, transmissionMode);
+
+            IsCreated = true;
+            return Pipe;
+        }
+
+
 
         #region IDisposable Members
 
         /// <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
         public void Dispose()
         {
-            throw new NotImplementedException();
+            Pipe.Flush();
+            Pipe.Dispose();
+            
+            IsCreated = false;
         }
 
         #endregion

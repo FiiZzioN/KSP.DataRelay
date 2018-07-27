@@ -32,5 +32,20 @@ namespace DataRelay.Common
                 return memoryStream.ToArray();
             }
         }
+
+        /// <summary>
+        /// Deserializes the specified byte array into an object.
+        /// </summary>
+        /// <param name="array">The array to convert into an object.</param>
+        private static object ByteArrayToObject(byte[] array)
+        {
+            using (var memoryStream = new MemoryStream(array))
+            {
+                var binaryFormatter = new BinaryFormatter();
+                var obj = binaryFormatter.Deserialize(memoryStream);
+
+                return obj;
+            }
+        }
     }
 }

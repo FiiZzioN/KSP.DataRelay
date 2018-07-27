@@ -52,6 +52,7 @@
     <Compile Include="Data\Providers\SpaceCenterDataProvider.cs" />
     <Compile Include="Data\Relayers\GameDataRelay.cs" />
     <Compile Include="PipeServer.cs" />
+    <Compile Include="PipeServerFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
