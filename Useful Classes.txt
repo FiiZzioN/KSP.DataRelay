@@ -1,6 +1,0 @@
-HighLogic: Get high-level information about the current game.
-Funding: Get a save's monetary information.
-Reputation: Get a save's reputaion information.
-ResearchAndDevelopment: Get science data and tech tree information.
-Planetarium: Get medium-level data from the solar system. 
-Vessel: Get info about the current vessel.
