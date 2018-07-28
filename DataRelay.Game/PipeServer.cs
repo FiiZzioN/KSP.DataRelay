@@ -11,12 +11,9 @@
 // ***********************************************************************
 
 using System;
-using System.Collections.Generic;
 using System.IO.Pipes;
-using System.Linq;
-using System.Text;
 
-namespace DataRelay
+namespace DataRelay.Game
 {
     public class PipeServer : IDisposable
     {

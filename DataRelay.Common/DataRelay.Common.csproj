@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C8D17880-CE28-49F2-97A5-70C7C354F3F1}</ProjectGuid>
+    <ProjectGuid>{BAE09A46-4DCD-4976-8E17-5DC0E8DBF09C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DataRelay</RootNamespace>
-    <AssemblyName>DataRelay</AssemblyName>
+    <RootNamespace>DataRelay.Common</RootNamespace>
+    <AssemblyName>DataRelay.Common</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,35 +30,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\..\Desktop\Quick Access Shortcuts\(C) Steam Directory\Kerbal Space Program v1.4.5 Dev Environment\KSP_x64_Data\Managed\Assembly-CSharp.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="UnityEngine">
-      <HintPath>..\..\..\..\..\Desktop\Quick Access Shortcuts\(C) Steam Directory\Kerbal Space Program v1.4.5 Dev Environment\KSP_x64_Data\Managed\UnityEngine.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Interfaces\IDataProvider.cs" />
-    <Compile Include="Data\Providers\GameDataProvider.cs" />
-    <Compile Include="Data\Providers\SpaceCenterDataProvider.cs" />
-    <Compile Include="Data\Relayers\GameDataRelay.cs" />
-    <Compile Include="PipeServer.cs" />
-    <Compile Include="PipeServerFactory.cs" />
+    <Compile Include="Containers\GameContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DataRelay.Containers\DataRelay.Common.csproj">
-      <Project>{bae09a46-4dcd-4976-8e17-5dc0e8dbf09c}</Project>
-      <Name>DataRelay.Common</Name>
-    </ProjectReference>
+    <Compile Include="Containers\SpaceCenterContainer.cs" />
+    <Compile Include="TypeSwitch.cs" />
+    <Compile Include="Utilities.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

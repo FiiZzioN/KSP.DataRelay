@@ -10,12 +10,7 @@
 // License          : MIT License
 // ***********************************************************************
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace DataRelay.Data.Interfaces
+namespace DataRelay.Game.Interfaces
 {
     /// <summary>
     /// Signifies that an <see cref="object"/> holds and provides a certain type of data.

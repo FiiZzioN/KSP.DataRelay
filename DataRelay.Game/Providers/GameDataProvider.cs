@@ -11,10 +11,9 @@
 // ***********************************************************************
 
 using DataRelay.Common.Containers;
-using DataRelay.Data.Interfaces;
-using DataRelay.Data.Relayers;
+using DataRelay.Game.Interfaces;
 
-namespace DataRelay.Data.Providers
+namespace DataRelay.Game.Providers
 {
     public class GameDataProvider : ScenarioModule, IDataProvider<GameContainer>
     {

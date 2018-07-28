@@ -5,7 +5,7 @@
 // Created          : 07-26-2018
 //
 // Last Modified By : Nicholas Tyler
-// Last Modified On : 07-26-2018
+// Last Modified On : 07-27-2018
 //
 // License          : MIT License
 // ***********************************************************************
@@ -36,7 +36,7 @@ namespace DataRelay.Common
         /// <summary>
         /// Deserializes the specified byte array into an object.
         /// </summary>
-        /// <param name="array">The array to convert into an object.</param>
+        /// <param name="array">The byte array to convert into an object.</param>
         private static object ByteArrayToObject(byte[] array)
         {
             using (var memoryStream = new MemoryStream(array))

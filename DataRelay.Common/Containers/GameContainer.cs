@@ -10,10 +10,12 @@
 // License          : MIT License
 // ***********************************************************************
 
+using System;
 using System.Runtime.InteropServices;
 
 namespace DataRelay.Common.Containers
 {
+    [Serializable]
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
     public struct GameContainer
     {

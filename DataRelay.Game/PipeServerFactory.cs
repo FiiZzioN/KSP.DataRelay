@@ -1,26 +1,25 @@
-﻿// ************************************************************************
-// Assembly         : DataRelay.Common
-// 
+﻿// ***********************************************************************
+// Assembly         : DataRelay
+//
 // Author           : Nicholas Tyler
-// Created          : 07-26-2018
-// 
+// Created          : 07-27-2018
+//
 // Last Modified By : Nicholas Tyler
-// Last Modified On : 07-26-2018
-// 
+// Last Modified On : 07-28-2018
+//
 // License          : MIT License
 // ***********************************************************************
 
-using DataRelay.Common;
-using DataRelay.Common.Containers;
 using System;
 using System.IO.Pipes;
+using DataRelay.Common;
+using DataRelay.Common.Containers;
 
-namespace DataRelay
+namespace DataRelay.Game
 {
     public static class PipeServerFactory
     {
         private static NamedPipeServerStream NamedPipeToReturn { get; set; }
-
 
         public static NamedPipeServerStream GetNamedPipeServerStream(Type type)
         {
