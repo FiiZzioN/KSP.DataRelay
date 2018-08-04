@@ -1,35 +1,36 @@
-﻿// ***********************************************************************
-// Assembly         : DataRelay
-//
+﻿// ************************************************************************
+// Assembly         : DataRelay.Client
+// 
 // Author           : Nicholas Tyler
-// Created          : 07-26-2018
-//
+// Created          : 08-01-2018
+// 
 // Last Modified By : Nicholas Tyler
-// Last Modified On : 07-29-2018
-//
+// Last Modified On : 08-01-2018
+// 
 // License          : MIT License
-// ************************************************************************
+// ***********************************************************************
 
-using System;
-using System.IO.Pipes;
-using System.Runtime.InteropServices;
-using System.Runtime.Serialization.Formatters.Binary;
 using DataRelay.Common;
+using System;
+using System.IO;
+using System.IO.Pipes;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Security.Principal;
 
-namespace DataRelay.Game
+namespace DataRelay.Client
 {
-    public sealed class PipeServer : IDisposable
+    public sealed class PipeClient : IDisposable
     {
-        private static NamedPipeServerStream _pipe;
+        private static NamedPipeClientStream _pipe;
 
         /// <summary>
-        /// Gets the pipe server.
+        /// Gets the pipe client.
         /// </summary>
-        public static NamedPipeServerStream Pipe
+        public static NamedPipeClientStream Pipe
         {
             get
             {
-                return _pipe ?? CreatePipeServer();                
+                return _pipe ?? CreatePipeServer();
             }
             private set
             {
@@ -37,33 +38,26 @@ namespace DataRelay.Game
                 {
                     return;
                 }
-                
-                _pipe = value;                
-            }            
+
+                _pipe = value;
+            }
         }
 
         /// <summary>
-        /// Creates and then returns the pipe server.
+        /// Creates and then returns the pipe client.
         /// </summary>
-        public static NamedPipeServerStream CreatePipeServer()
+        public static NamedPipeClientStream CreatePipeServer()
         {
-            return Pipe ?? (Pipe = new NamedPipeServerStream(PipeData.ServerName, PipeDirection.InOut,
-                NamedPipeServerStream.MaxAllowedServerInstances, PipeTransmissionMode.Message));
+            return Pipe ?? (Pipe = new NamedPipeClientStream(PipeData.ServerName, PipeData.ClientName, PipeDirection.InOut,
+                PipeOptions.None, TokenImpersonationLevel.Identification, HandleInheritability.Inheritable));
         }
 
         /// <summary>
         /// Writes the specified object to the pipe.
         /// </summary>
         /// <param name="obj">The object to write to the pipe.</param>
-        public static void Write<T>(T obj)
+        public static void Write(object obj)
         {
-            //var convertedObject = Utilities.SerializeToByteArray(obj);
-
-            //if (Pipe.IsConnected && Pipe.CanWrite)
-            //{
-            //    Pipe.Write(convertedObject, 0, Marshal.SizeOf(typeof(T)));
-            //}
-
             if (Pipe.IsConnected && Pipe.CanWrite)
             {
                 var formatter = new BinaryFormatter();
@@ -74,15 +68,15 @@ namespace DataRelay.Game
         /// <summary>
         /// Reads this instance.
         /// </summary>
-        public static string Read()
+        public static T Read<T>()
         {
             if (Pipe.IsConnected && Pipe.CanRead)
             {
                 var formatter = new BinaryFormatter();
-                return (string)formatter.Deserialize(Pipe);
+                return (T)formatter.Deserialize(Pipe);
             }
 
-            return null;
+            return default(T);
         }
 
         /// <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>

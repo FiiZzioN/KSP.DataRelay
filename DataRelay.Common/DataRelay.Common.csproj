@@ -38,9 +38,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Containers\GameContainer.cs" />
+    <Compile Include="ContainerType.cs" />
+    <Compile Include="DataContainers\FlightContainer.cs" />
+    <Compile Include="DataContainers\GameInfoContainer.cs" />
+    <Compile Include="DataContainers\VesselContainer.cs" />
+    <Compile Include="PipeData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Containers\SpaceCenterContainer.cs" />
+    <Compile Include="DataContainers\SpaceCenterContainer.cs" />
     <Compile Include="TypeSwitch.cs" />
     <Compile Include="Utilities.cs" />
   </ItemGroup>

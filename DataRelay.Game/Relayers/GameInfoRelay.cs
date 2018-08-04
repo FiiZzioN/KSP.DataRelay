@@ -10,27 +10,23 @@
 // License          : MIT License
 // ***********************************************************************
 
-using UnityEngine;
+using DataRelay.Common.DataContainers;
 
 namespace DataRelay.Game.Relayers
 {
-    //[KSPScenario(ScenarioCreationOptions.None, GameScenes.FLIGHT, GameScenes.SPACECENTER, GameScenes.TRACKSTATION)]
-    [KSPAddon(KSPAddon.Startup.FlightAndKSC, false)]
-    public class GameDataRelay : MonoBehaviour
+    /// <summary>
+    /// Relayers send the data through the pipes.
+    /// </summary>
+    public class GameInfoRelay
     {
-        public void Start()
+        public void RelayData(GameInfoContainer Container)
         {
+            var pipe = PipeServer.Pipe;
 
-        }
-
-        public void FixedUpdate()
-        {
-
-        }
-
-        public void OnDisable()
-        {
-
+            if (pipe.IsConnected && pipe.CanWrite)
+            {
+                PipeServer.Write(Container);
+            }
         }
     }
 }

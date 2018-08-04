@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DataRelay.Game</RootNamespace>
-    <AssemblyName>DataRelay</AssemblyName>
+    <AssemblyName>DataRelay.Game</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -47,10 +47,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataRelayer.cs" />
     <Compile Include="Interfaces\IDataProvider.cs" />
-    <Compile Include="Providers\GameDataProvider.cs" />
-    <Compile Include="Providers\SpaceCenterDataProvider.cs" />
-    <Compile Include="Relayers\GameDataRelay.cs" />
+    <Compile Include="Providers\GameInfoProvider.cs" />
+    <Compile Include="Providers\SpaceCenterProvider.cs" />
+    <Compile Include="RelayCore.cs" />
+    <Compile Include="Relayers\GameInfoRelay.cs" />
     <Compile Include="PipeServer.cs" />
     <Compile Include="PipeServerFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

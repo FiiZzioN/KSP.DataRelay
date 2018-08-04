@@ -13,7 +13,7 @@
 using System;
 using System.IO.Pipes;
 using DataRelay.Common;
-using DataRelay.Common.Containers;
+using DataRelay.Common.DataContainers;
 
 namespace DataRelay.Game
 {
@@ -40,7 +40,7 @@ namespace DataRelay.Game
         {
             var typeSwitch = new TypeSwitch();
 
-            typeSwitch.AddCase(typeof(GameContainer), GameContainer);
+            typeSwitch.AddCase(typeof(GameInfoContainer), GameContainer);
             typeSwitch.AddCase(typeof(SpaceCenterContainer), SpaceCenterContainer);
 
             return typeSwitch;
